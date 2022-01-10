@@ -7,37 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="./scripts.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="big-container">
+        <div class="utilities">
+            <h1>Etch-a-Sketch</h1>
+            <button class="btn">Clear</button>
+            <button class="btn">Erase</button>
+            <button class="btn">Rainbow</button>
+            <button class="btn">'Murica</button>
+            <button class="btn">Color Mode</button>
+            <div class="slide-container">
+                <input type="range" min="8" max="64" value="48" class="slider">
+            </div>
+        </div>
+        <div class="container">
+        </div>
     </div>
-    <div class="utilities">
-        <button class="btn">Clear</button>
-
-        <!--
-      <span>Grid size:
-      <select name="grid-size" id="grid-size">
-        <option value="8">8x8</option>
-        <option value="9">9x9</option>
-        <option value="10">10x10</option>
-        <option value="11">11x11</option>
-        <option value="12">12x12</option>
-        <option value="13">13x13</option>
-        <option value="14">14x14</option>
-        <option value="15">15x15</option>
-        <option value="16">16x16</option>
-        <option value="32">32x32</option>
-        <option value="64">64x64</option>
-        <option value="128">128x128</option>
-      </select>
-      
-    </span>
-    -->
-
-    </div>
-
 </body>
 
 </html>

@@ -12,8 +12,15 @@ dark dark blue: #222831
 body {
     margin: auto;
     padding: 50px 50px;
-    background-color: #EFEFEF;
+    background-color: #EEEEEE;
     font-family: 'Space Mono', monospace;
+    color: #072227;
+}
+
+.item {
+    border-style: solid;
+    border-width: 1px;
+    color: lightgrey;
 }
 
 .container {
@@ -26,17 +33,24 @@ body {
     height: 500px;
     width: 500px;
     background-color: white;
+    box-shadow: 2px 2px grey;
+    border-radius: 10px;
 }
 
 .utilities {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
     gap: 20px;
     justify-content: center;
+    align-items: center;
 }
 
-.btn {
+.btn-clear,
+.btn-eraser,
+.btn-unicorn,
+.btn-color,
+.btn-merica {
     background-color: #efefef;
     height: 50px;
     width: 150px;
@@ -47,24 +61,42 @@ body {
     font-family: 'Space Mono', monospace;
 }
 
-.btn:hover {
+.btn-clear:hover,
+.btn-eraser:hover,
+.btn-unicorn:hover,
+.btn-color:hover,
+.btn-merica:hover {
     opacity: 1;
     transition: opacity .2s;
     cursor: pointer;
-    background-color: grey;
+    background-color: #172774;
     border-color: black;
+    color: #EEEEEE;
+    font-style: bold;
 }
 
 .big-container {
     display: flex;
     flex-direction: row;
     gap: 100px;
+    align-items: center;
+}
+
+
+/* div {
+    border-style: solid;
+    border-width: 1px;
+} */
+
+.slide-container {
+    color: gray;
+    margin-top: 20px;
 }
 
 .slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    width: 150px;
     height: 10px;
     transition: opacity .2s;
     outline: none;
@@ -85,17 +117,22 @@ body {
     appearance: none;
     width: 15px;
     height: 30px;
-    background: #FFC069;
+    background: #77D970;
     cursor: pointer;
     border-radius: 25px;
     border-style: solid;
-    border-color: #4A403A;
+    border-color: #77D970;
 }
 
 .slider::-moz-range-thumb {
     width: 15px;
     height: 30px;
-    background: #FFC069;
+    background: #77D970;
     cursor: pointer;
     border-radius: 25px;
+}
+
+.active {
+    background-color: #172774;
+    color: white;
 }

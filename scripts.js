@@ -1,22 +1,28 @@
 const container = document.querySelector(".container");
 
 
-function createGrid() {
-    const gridSize = Number(prompt("Choose grid size. (Must be less than 100.)"));
-    if (gridSize < 100) {
-        container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-        container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-        for (i = 0; i < gridSize ** 2; i++) {
-            const div = document.createElement("div");
-            div.classList.add("item");
-            container.appendChild(div);
-        }
-    } else {
-        location.reload();
+function createGrid(size) {
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    for (i = 0; i < size ** 2; i++) {
+        const div = document.createElement("div");
+        div.classList.add("item");
+        container.appendChild(div);
     }
 }
-createGrid();
+createGrid(16);
 
+
+function clearGrid() {
+    container.innerHTML = "";
+}
+
+const slider = document.querySelector(".slider");
+
+function changeSize() {
+    let newSize = slider.value;
+
+}
 
 
 //change the background color on all the divs when hovered
@@ -29,9 +35,9 @@ items.forEach((item) => {
 })
 
 //clear the screen
-const btn = document.querySelector(".btn");
+const btnClear = document.querySelector(".btn-clear");
 
-btn.addEventListener("click", function() {
+btnClear.addEventListener("click", function() {
     items.forEach((item) => {
         item.style.backgroundColor = "white";
     })

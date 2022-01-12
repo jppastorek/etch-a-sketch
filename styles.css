@@ -49,7 +49,7 @@ body {
 .btn-clear,
 .btn-eraser,
 .btn-unicorn,
-.btn-color,
+.btn-random,
 .btn-merica {
     background-color: #efefef;
     height: 50px;
@@ -59,12 +59,13 @@ body {
     border-color: gray;
     opacity: 0.8;
     font-family: 'Space Mono', monospace;
+    font-size: 18px;
 }
 
 .btn-clear:hover,
 .btn-eraser:hover,
 .btn-unicorn:hover,
-.btn-color:hover,
+.btn-random:hover,
 .btn-merica:hover {
     opacity: 1;
     transition: opacity .2s;

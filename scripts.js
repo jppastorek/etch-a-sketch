@@ -42,6 +42,12 @@ items.forEach((item) => {
             const mericaColors = ["red", "lightgray", "blue"]
             let nextColor = mericaColors[Math.floor(Math.random() * 3)]
             item.style.backgroundColor = nextColor;
+        } else if (paintColor === "random") {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            paintColor = `rgb(${r}, ${g}, ${b})`;
+            item.style.backgroundColor = paintColor;
         } else {
             item.style.backgroundColor = paintColor;
         }
@@ -49,13 +55,32 @@ items.forEach((item) => {
 })
 
 //clear the screen
+
+function activateButton(e) {
+    deactivateButtons();
+    e.target.classList.add("active");
+};
+
+const btns = document.querySelectorAll(".btn");
+
+function deactivateButtons() {
+    btns.forEach((button) => {
+        if (button.classList.contains("active")) {
+            button.classList.remove("active");
+        }
+    });
+};
+
+
 const btnClear = document.querySelector(".btn-clear");
 
 btnClear.addEventListener("click", function() {
     items.forEach((item) => {
         item.style.backgroundColor = "white";
     })
-})
+    deactivateButtons();
+    changeColor("black");
+});
 
 function changeColor(newColor) {
     paintColor = newColor;
@@ -63,16 +88,18 @@ function changeColor(newColor) {
 
 const btnEraser = document.querySelector(".btn-eraser");
 
-btnEraser.addEventListener("click", () => {
+btnEraser.addEventListener("click", (e) => {
     changeColor("white");
+    activateButton(e);
 });
 
 
 
 const btnUnicorn = document.querySelector(".btn-unicorn");
 
-btnUnicorn.addEventListener("click", () => {
+btnUnicorn.addEventListener("click", (e) => {
     changeColor("unicorn");
+    activateButton(e);
 });
 
 
@@ -80,6 +107,15 @@ btnUnicorn.addEventListener("click", () => {
 
 const btnMerica = document.querySelector(".btn-merica");
 
-btnMerica.addEventListener("click", () => {
+btnMerica.addEventListener("click", (e) => {
     changeColor("merica");
+    activateButton(e);
+})
+
+
+const btnRandom = document.querySelector(".btn-random");
+
+btnRandom.addEventListener("click", (e) => {
+    changeColor("random");
+    activateButton(e);
 })

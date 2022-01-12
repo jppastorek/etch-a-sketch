@@ -25,12 +25,26 @@ function changeSize() {
 }
 
 
+
 //change the background color on all the divs when hovered
+
+let paintColor = "black";
 const items = document.querySelectorAll(".item");
 
 items.forEach((item) => {
     item.addEventListener("mouseover", () => {
-        item.style.backgroundColor = "black";
+        if (paintColor === "unicorn") {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            item.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        } else if (paintColor === "merica") {
+            const mericaColors = ["red", "lightgray", "blue"]
+            let nextColor = mericaColors[Math.floor(Math.random() * 3)]
+            item.style.backgroundColor = nextColor;
+        } else {
+            item.style.backgroundColor = paintColor;
+        }
     })
 })
 
@@ -41,4 +55,31 @@ btnClear.addEventListener("click", function() {
     items.forEach((item) => {
         item.style.backgroundColor = "white";
     })
+})
+
+function changeColor(newColor) {
+    paintColor = newColor;
+}
+
+const btnEraser = document.querySelector(".btn-eraser");
+
+btnEraser.addEventListener("click", () => {
+    changeColor("white");
+});
+
+
+
+const btnUnicorn = document.querySelector(".btn-unicorn");
+
+btnUnicorn.addEventListener("click", () => {
+    changeColor("unicorn");
+});
+
+
+
+
+const btnMerica = document.querySelector(".btn-merica");
+
+btnMerica.addEventListener("click", () => {
+    changeColor("merica");
 })
